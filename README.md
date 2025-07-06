@@ -15,7 +15,7 @@ This app was heavily inspired by the [Getting Started with Rails](https://guides
 App features implemented in given timeframe (🟠 - to be implemented, ⭐ - extra functionality implemented):
 - ✅ Users can save a list of notes.
 - ✅ Each note is in Markdown format (user can enter content as markdown, e.g. input `# ` before a character to create a heading).
-- 🟠 Each note has a front-end preview of the formatted Markdown before saving.
+- ✅ Each note has a front-end preview of the formatted Markdown before saving.
 - 🟠 Test coverage (optional, but encouraged to do as part of test).
 
 **Console commands used**
@@ -29,6 +29,11 @@ bin/rails db:migrate
 Implement controllers & actions for the CRUD URLs (defined in `routes.rb`):
 ```
 bin/rails generate controller Notes index --skip-routes
+```
+
+After adding `gem redcarpet` to display formatted markdown text:
+```
+bundle install
 ```
 
 **General comments about development process**: ...

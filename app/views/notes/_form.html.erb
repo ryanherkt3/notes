@@ -7,7 +7,24 @@
   <div>
     <%= form.label :content, style: "display: block" %>
     <%= form.text_area :content %>
+    <%= button_tag 'Show Markdown Preview', type: 'button', onclick: 'showMarkdown()' %>
   </div>
+
+  <div>
+    <span>Markdown Preview</span>
+    <div id="output_div"></div>
+  </div>
+
+  <script>
+    function showMarkdown() {
+      // Get the text content shown in the editor
+      const input = document.getElementById('note_content').value;
+      const output = document.getElementById('output_div');
+
+      // Convert markdown to HTML
+      output.innerHTML = marked.parse(input);
+    }
+  </script>
 
   <div>
     <%= form.submit %>
