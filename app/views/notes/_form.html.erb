@@ -1,18 +1,22 @@
 <%= form_with model: note do |form| %>
-  <div>
+  <div class="form-field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div>
+  <div class="form-field">
     <%= form.label :content, style: "display: block" %>
     <%= form.text_area :content %>
+  </div>
+
+  <div class="form-buttons">
     <%= button_tag 'Show Markdown Preview', type: 'button', onclick: 'showMarkdown()' %>
+    <%= form.submit %>
   </div>
 
   <div>
     <span>Markdown Preview</span>
-    <div id="output_div"></div>
+    <div id="output_div" class="markdown"></div>
   </div>
 
   <script>
@@ -25,8 +29,4 @@
       output.innerHTML = marked.parse(input);
     }
   </script>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>
