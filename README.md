@@ -26,6 +26,11 @@ bin/rails generate model Note title:string content:text
 bin/rails db:migrate
 ```
 
+Implement controllers & actions for the CRUD URLs (defined in `routes.rb`):
+```
+bin/rails generate controller Notes index --skip-routes
+```
+
 **General comments about development process**: ...
 
 Features I would have implemented had I been given more time:
