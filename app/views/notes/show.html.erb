@@ -1,0 +1,13 @@
+<p><%= link_to "Back", notes_path %></p>
+
+<section class="note">
+  <section class="note-info">
+    <% cache @note do %>
+      <h1><%= @note.title %></h1>
+      <%= @note.content %>
+    <% end %>
+
+    <%= link_to "Edit", edit_note_path(@note) %>
+    <%= button_to "Delete", @note, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+  </section>
+</section>

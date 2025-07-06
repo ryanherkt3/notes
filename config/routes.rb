@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # put "/notes/:id", to: "notes#update"
 
   # delete "/notes/:id", to: "notes#destroy"
-  
+
   # Shortcut for defining the CRUD routes above
   resources :notes
 

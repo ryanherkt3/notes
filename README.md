@@ -13,8 +13,8 @@ Ruby and Rails must be installed for this application to work - I followed the [
 This app was heavily inspired by the [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html) tutorial, which I finished before receiving this technical test.
 
 App features implemented in given timeframe (🟠 - to be implemented, ⭐ - extra functionality implemented):
-- 🟠 Users can save a list of notes.
-- 🟠 Each note is in Markdown format.
+- ✅ Users can save a list of notes.
+- ✅ Each note is in Markdown format (user can enter content as markdown, e.g. input `# ` before a character to create a heading).
 - 🟠 Each note has a front-end preview of the formatted Markdown before saving.
 - 🟠 Test coverage (optional, but encouraged to do as part of test).
 
