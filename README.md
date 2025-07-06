@@ -18,8 +18,13 @@ App features implemented in given timeframe (🟠 - to be implemented, ⭐ - ext
 - 🟠 Each note has a front-end preview of the formatted Markdown before saving.
 - 🟠 Test coverage (optional, but encouraged to do as part of test).
 
-**Console commands used**:
-...
+**Console commands used**
+
+Create DB for storing notes and run the migration:
+```
+bin/rails generate model Note title:string content:text
+bin/rails db:migrate
+```
 
 **General comments about development process**: ...
 
