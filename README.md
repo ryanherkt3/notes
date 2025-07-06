@@ -8,15 +8,16 @@ Ruby and Rails must be installed for this application to work - I followed the [
 
 ### Development process
 
-**Time taken**: ... / 2 hours (time given by test setter)
+**Time taken**: 2 hours / 2 hours (time recommended by test setter)
 
-This app was heavily inspired by the [Getting Started with Rails](https://guides.rubyonrails.org/getting_started.html) tutorial, which I finished before receiving this technical test.
-
-App features implemented in given timeframe (🟠 - to be implemented, ⭐ - extra functionality implemented):
+App features implemented in given timeframe (⭐ - extra functionality implemented):
 - ✅ Users can save a list of notes.
-- ✅ Each note is in Markdown format (user can enter content as markdown, e.g. input `# ` before a character to create a heading).
+    - ⭐ Deleting notes is also possible.
+- ✅ Each note is in Markdown format (user can enter content as Markdown, e.g. input `# ` before a character to create a heading).
 - ✅ Each note has a front-end preview of the formatted Markdown before saving.
-- 🟠 Test coverage (optional, but encouraged to do as part of test).
+    - A `Show Markdown Button` can be clicked to show this preview.
+- ✅ Test coverage (optional, but encouraged to do as part of test).
+    - Only testing for DB interactions, no integration or E2E testing.
 
 **Console commands used**
 
@@ -31,15 +32,18 @@ Implement controllers & actions for the CRUD URLs (defined in `routes.rb`):
 bin/rails generate controller Notes index --skip-routes
 ```
 
-After adding `gem redcarpet` to display formatted markdown text:
+After adding `gem redcarpet` to display formatted Markdown text:
 ```
 bundle install
 ```
 
-**General comments about development process**: ...
+**General comments about development process**: I installed `Redcarpet` to display the note content in Markdown form when viewing the note (e.g. `notes/4`), and imported the `Marked` JS package and used an inline script on the note editing form to allow a Markdown preview of the text area content to be shown.
 
 Features I would have implemented had I been given more time:
-- ...
+- When opening the edit page for a note, show the Markdown preview without needing to click the button. 
+- Show a real time Markdown preview (i.e. when typing) of a new or edited note. 
+- Account functionality / notes specific for particular users (e.g. `user 1` and `user 2` each have their own set of notes).
+- More comprehensive test coverage (e.g. integration / E2E testing).
 
 ### Local Development
 
@@ -52,28 +56,16 @@ And open http://localhost:3000. `bin/rails` ensures this application's version o
 
 To stop the dev server, press `Ctrl` + `C` in the terminal.
 
-If you wish to use the console, open another terminal and use the following command:
+### Tests
+
+Test coverage has been added to this project. To run the entire test suite, use the following command:
 ```bash
-bin/rails console
-```
-To exit the console. type `quit` then press `Enter`.
-
-### Tests (TODO add / delete)
-
-...
-
-### Linting
-
-To ensure the CI tests pass for this project, the coding style for this project must be consistent. To check this is the case, use the following command:
-```bash
-bin/rubocop
+bin/rails test
 ```
 
-If there are linting errors, running this command again and adding the `-a` flag in front autocorrects any issues.
-
-### Security
-
-To check for security issues with the application, use the following command:
+Alternatively, to run an individual test file, use the following command:
 ```bash
-bin/brakeman
+bin/rails test filename
 ```
+Where valid `filename`s are:
+- `test/models/note_test.rb`
